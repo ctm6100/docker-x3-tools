@@ -1,7 +1,7 @@
 
 services:
   x3_ai_toolchain:
-    image: openexplorer/ai_toolchain_ubuntu_20_xj3_cpu:v2.6.4
+    image: openexplorer/ai_toolchain_ubuntu_20_xj3_cpu:v2.6.6-py38
     stdin_open: true
     tty: true
     volumes:
@@ -12,4 +12,4 @@ services:
       - ./dataset:/data/horizon_xj3/data
   
     # To run interactively and remove container after exit, use:
-    # docker compose run --rm ai_toolchain
+    # docker compose run --rm x3_ai_toolchain
