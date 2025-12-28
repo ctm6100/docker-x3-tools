@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env
+.env
+venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Docker
+*.log
+dataset/
+open_explorer/
+
+# System files
+Thumbs.db
+
+# Node
+node_modules/
+
+# Others
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore docker-compose override files
+/docker-compose.override.yml
