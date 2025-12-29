@@ -139,6 +139,6 @@ onnx.save(converted_model, "your_model_opset11.onnx")
 
 ## Useful Links
 
-- [Docker Hub - OpenExplorer AI Toolchain Docker Image(CPU Version)](https://hub.docker.com/r/openexplorer/ai_toolchain_ubuntu_20_xj3_cpu)
-
 - [D-Robotics - OpenExplorer OE Packager and Docker Image Download Page](https://forum.d-robotics.cc/t/topic/28035)  
+
+- [Docker Hub - OpenExplorer AI Toolchain Docker Image(CPU Version)](https://hub.docker.com/r/openexplorer/ai_toolchain_ubuntu_20_xj3_cpu)
