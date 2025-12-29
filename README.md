@@ -51,7 +51,6 @@ docker load -i <path_to_your_docker_image_tar_file>
 
 ### 2. Start the Container
 
-
 Run the following command to start the container interactively and remove it after exit:
 
 > if you wish keep the container after exit, `docker compose up` can be used instead.
@@ -116,7 +115,22 @@ ERROR *** ERROR-OCCUR-DURING {horizon_nn.build_onnx} ***, error message: The ops
 
 your ONNX model opset version is higher than the supported version (11). Please export your model to opset version 11 or lower using the following command:
 
-> here you, yolo CLI people `yolo export model=yolo11n.pt format=onnx opset=11`
+### Yolo
+
+> here you, yolo CLI people `yolo export model=yolo11n.pt format=onnx opset=11`, also you shd also set simplify=False, dynamic=False, half=False.
+
+```python
+your_lovely_model = model.export(
+    format='onnx',
+    imgsz=320,
+    opset=11,
+    simplify=False,
+    dynamic=False,
+    half=False
+)
+```
+
+### PyTorch
 
 ```python
 torch.onnx.export(model, inputs, "model.onnx", opset_version=11)
