@@ -1,4 +1,4 @@
-# X3 AI Toolchain Docker Compose Usage
+# X3 OE Toolchain Docker Compose Usage
 
 This project provides a Docker Compose setup for running the OpenExplorer AI Toolchain for X3 on Ubuntu 20 (CPU version).
 
@@ -86,11 +86,15 @@ bash install.sh
 
 ## Common Commands
 
-Check model for Bernoulli2 architecture(your X3 AI accelerator):
+### Check Onnx Model Command
+
+Check model for Bernoulli2 architecture(your X3 accelerator):
 
 ```bash
 hb_mapper checker --model-type onnx --march bernoulli2 --model <your model>.onnx
 ```
+
+### PTQ Quantization Command
 
 Run model conversion.  
 
