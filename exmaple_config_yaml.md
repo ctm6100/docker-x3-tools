@@ -13,7 +13,7 @@ For details, please refer to the official documentation(X3 Toolchain> 3.2.3.1 YA
 ```yaml
 # config.yaml
 model_parameters:
-    # file path to the ONNX model
+    # file name to the ONNX model
     onnx_model: 'your_model.onnx'
     # BPU architecture type, e.g., X3 BPU: 'bernoulli2', X5 BPU: 'bayes2', s100 (why you do not use AGX??)...
     march: "bernoulli2"
@@ -92,6 +92,37 @@ compiler_parameters:
     optimize_level: 'O3'
 ```
 
+## Exmple for yolo11n_cls config yaml
+
+yolo11n_cls_config.yaml
+
+```yaml
+model_parameters:
+  onnx_model: 'yolo11n.onnx'
+  march: 'bernoulli2'
+  working_dir: 'model_output'
+  output_model_file_prefix: 'yolo11n_detect_bernoulli2_nv12'
+  node_info: {"/model.10/m/m.0/attn/Softmax": {'ON': 'BPU','InputType': 'int16','OutputType': 'int16'}}
+
+input_parameters:
+  input_type_rt: 'nv12'
+  input_type_train: 'rgb'
+  input_layout_train: 'NCHW'
+  norm_type: 'data_scale'
+  # this scale value is 1/255
+  scale_value: 0.003921568627451
+
+calibration_parameters:
+  cal_data_dir: './calibration_images'
+  cal_data_type: 'float32'
+  calibration_type: 'default'
+
+compiler_parameters:
+  compile_mode: 'latency'
+  optimize_level: 'O3'
+```
+
 ## Reference
 
 - [X3 Toolchain User Guide(Chinese)](http://10.33.20.238:8080/oe_mapper/source/faststart/quickstart.html#id2)
+- [X5: Yolo11n Deloyment(Chinese)](https://forum.d-robotics.cc/t/topic/33301)
